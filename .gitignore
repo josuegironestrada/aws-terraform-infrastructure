@@ -1,0 +1,46 @@
+# Terraform local provider downloads
+.terraform/
+
+# Terraform state - never publish
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Local environment and credential files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.tfplan
+tfplan
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local Terraform CLI configurations
+.terraformrc
+terraform.rc
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Keep Terraform provider dependency lock file!
+!.terraform.lock.hcl
