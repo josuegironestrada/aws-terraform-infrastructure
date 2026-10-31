@@ -8,7 +8,7 @@ data "aws_ssm_parameter" "amazon_linux" {
 resource "aws_instance" "web" {
   user_data_replace_on_change = true
   ami                         = data.aws_ssm_parameter.amazon_linux.value
-  instance_type               = "t3.micro"
+  instance_type               = var.instance_type
 
   subnet_id = aws_subnet.public_a.id
 
@@ -40,20 +40,9 @@ resource "aws_instance" "web" {
 
   tags = {
     Name        = "portfolio-project2-web-server"
-    Project     = "AWS-Cloud-Portfolio"
-    Environment = "Development"
+    Project     = var.project_name
+    Environment = var.environment
     ManagedBy   = "Terraform"
   }
 }
 
-# Display the instance's public IP
-output "web_server_public_ip" {
-  description = "Public IPv4 address of the web server"
-  value       = aws_instance.web.public_ip
-}
-
-# Display its public HTTP URL
-output "web_server_url" {
-  description = "HTTP URL for the demonstration website"
-  value       = "http://${aws_instance.web.public_ip}"
-}
