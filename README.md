@@ -197,3 +197,15 @@ The local Terraform state file must be preserved while managing deployed resourc
 **Project type:** Personal hands-on Cloud Engineering learning project.
 
 **Repository:** [aws-terraform-infrastructure](https://github.com/josuegironestrada/aws-terraform-infrastructure)
+
+
+## Architecture
+
+The following diagram illustrates the AWS infrastructure
+provisioned using Terraform.
+
+![AWS Infrastructure Architecture](docs/architecture.png)
+
+The environment includes a custom VPC spanning two
+Availability Zones, public and private subnets, controlled
+internet routing, and an EC2 instance hosting Nginx.
