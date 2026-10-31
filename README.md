@@ -209,3 +209,15 @@ provisioned using Terraform.
 The environment includes a custom VPC spanning two
 Availability Zones, public and private subnets, controlled
 internet routing, and an EC2 instance hosting Nginx.
+
+### Terraform Configuration
+
+The project uses Terraform input variables to separate configurable values from resource definitions.
+
+Variables include the AWS Region, VPC CIDR block, EC2 instance type, environment, and project identifier.
+
+Default values reproduce the original deployment. The `terraform.tfvars.example` file documents available configuration options.
+
+Terraform outputs expose the VPC ID, subnet IDs, EC2 public IPv4 address, and demonstration website URL.
+
+Changes to input values should be reviewed using `terraform plan`, as modifying certain infrastructure properties may require resource replacement.
